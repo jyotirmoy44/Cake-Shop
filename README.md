@@ -2,6 +2,33 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Database
+
+Start PostgreSQL locally:
+
+```bash
+npm run db:up
+```
+
+The app uses:
+
+```bash
+DATABASE_URL="postgresql://postgres:postgres@localhost:5433/cakeshop?schema=public"
+SHADOW_DATABASE_URL="postgresql://postgres:postgres@localhost:5433/cakeshop_shadow?schema=public"
+```
+
+Run Prisma migrations:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+To stop the local database:
+
+```bash
+npm run db:down
+```
+
 First, run the development server:
 
 ```bash
