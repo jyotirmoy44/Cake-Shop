@@ -41,7 +41,7 @@ export function Button({
 }: ButtonProps) {
   const classes = getButtonClasses(variant, className);
 
-  if ("href" in props) {
+  if (typeof props.href === "string") {
     return (
       <Link href={props.href} className={classes}>
         {children}
